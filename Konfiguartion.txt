@@ -1,0 +1,4 @@
+Addresse="localhost",
+Datenbank="Testdatenbank",
+Benutzer="admin",
+Passwort="123aa123--"
