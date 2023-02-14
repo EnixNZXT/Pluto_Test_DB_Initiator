@@ -29,7 +29,7 @@ con=dict(line.strip().split("=") for line in config_file)
  #   print(f"Error: CSV file not found at path {csv_file_path}")
 
     # 5. CSV-Datei einlesen
-csv_file=open(r"Setups\Teilnehmer.csv", "r")
-csv=list(line.strip().split("/") for line in csv_file)
-print(setup)
+csv_file=open(r"csv\Teilnehmer.csv", "r")
+csv=list(line.strip().split(";") for line in csv_file)
+print(csv)
 print(date)
