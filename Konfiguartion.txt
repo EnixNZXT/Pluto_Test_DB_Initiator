@@ -1,5 +1,4 @@
-host=127.0.0.1:3307
-database=Testdatenbank
+host=localhost
 user=admin
 password=123aa123--
-refdate=16.02.2023
+database=Testdatenbank
