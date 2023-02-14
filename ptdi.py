@@ -11,14 +11,11 @@ date=sys.argv[2]
     
 
 config_file=open("Konfiguartion.txt","r")
-con=dict(line.strip().split("=") for line in config_file)
-#print(con["host"]
+config=dict(line.strip().split("=") for line in config_file)
+print(config["user"])
     #dict(line.strip().split("=") for line in config_file)
 # 1. Datenbankverbindung
-#connection = mysql.connector.connect(user=config["user"],
-#                                     password=config["password"],
-#                                     host=config["host"],
-#                                     database=config["database"])
+connection = mysql.connector.connect(**config)
     # 3. Setup-Datei lesen
 # with open(config["setup_file"], "r") as setup_file:
 # setup = dict(line.strip().split("=") for line in setup_file)
