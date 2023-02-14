@@ -1,0 +1,4 @@
+"Teilnahme":"Teilnahme.csv"
+"Teilnehmer":"Teilnehmer.csv"
+"Veranstaltung":"Veranstaltung.csv"
+  
