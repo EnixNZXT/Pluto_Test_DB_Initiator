@@ -1,4 +1,4 @@
-Addresse="localhost",
-Datenbank="Testdatenbank",
-Benutzer="admin",
-Passwort="123aa123--"
+host=127.0.0.1:3307
+database=Testdatenbank
+user=admin
+password=123aa123--
