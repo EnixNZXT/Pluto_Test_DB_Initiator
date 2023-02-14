@@ -2,19 +2,20 @@ import os
 import csv
 import psycopg2
 
-def main():
-    # 1. Datenbankverbindung
-    conn = psycopg2.connect(
-        host="localhost",
-        database="database_name",
-        user="user_name",
-        password="password"
-    )
-    cur = conn.cursor()
 
-    # 2. Konfigurationsdatei auslesen
-    with open("config.cfg", "r") as config_file:
-        config = dict(line.strip().split("=") for line in config_file)
+
+
+with open("Konfiguration.txt", "r") as config_file:
+    config = dict(line.strip().split("=") for line in config_file)
+
+# 1. Datenbankverbindung
+connection = psycopg2.connect(
+    host=config["host"],
+    database=config["database"],
+    user=config["user"],
+    password=config["password"]
+)
+cur = connection.cursor()
 
 
 
