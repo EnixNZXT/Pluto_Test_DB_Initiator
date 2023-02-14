@@ -1,21 +1,20 @@
 import os
 import csv
-import psycopg2
+import mysql.connector
+from mysql.connector import errorcode
 
 
 
 
 with open("Konfiguration.txt", "r") as config_file:
     config = dict(line.strip().split("=") for line in config_file)
-
 # 1. Datenbankverbindung
-connection = psycopg2.connect(
-    host=config["host"],
-    database=config["database"],
-    user=config["user"],
-    password=config["password"]
-)
-cur = connection.cursor()
+connection = mysql.connector.connect(user=config["user"],
+                                     password=config["password"],
+                                     host=config["host"],
+                                     database=config["database"])
+
+#cur = connection.cursor()
 
 
 
@@ -27,7 +26,7 @@ cur = connection.cursor()
 
 
     # 3. Setup-Datei lesen
-    with open(config["setup_file"], "r") as setup_file:
+with open(config["setup_file"], "r") as setup_file:
         setup = dict(line.strip().split("=") for line in setup_file)
 
     # 4. Dateipfade auf Existenz der Datei prüfen
