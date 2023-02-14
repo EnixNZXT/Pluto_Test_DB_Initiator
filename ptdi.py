@@ -10,7 +10,7 @@ date=sys.argv[2]
 
     
 
-config_file=open(r"C:\Users\roosk\Documents\repo\python\pluto_test_db_initiator\Konfiguartion.txt","r")
+config_file=open("Konfiguartion.txt","r")
 con=dict(line.strip().split("=") for line in config_file)
 #print(con["host"]
     #dict(line.strip().split("=") for line in config_file)
@@ -29,7 +29,7 @@ con=dict(line.strip().split("=") for line in config_file)
  #   print(f"Error: CSV file not found at path {csv_file_path}")
 
     # 5. CSV-Datei einlesen
-csv_file=open(r"C:\Users\roosk\Documents\repo\python\pluto_test_db_initiator\Setups\Teilnehmer.csv", "r")
+csv_file=open(r"Setups\Teilnehmer.csv", "r")
 csv=list(line.strip().split("/") for line in csv_file)
 print(setup)
 print(date)
