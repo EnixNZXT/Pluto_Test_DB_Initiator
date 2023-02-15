@@ -30,17 +30,11 @@ for key in setup_dict.keys():
     setupTables=str(setup_dict[key]).strip(".csv")
     setupTableList=list(setupTables.split(","))
     csv=dict(line.strip().split(":") for line in csv_file)
+    print("TRUNCATE", setup_dict[key].strip(".csv")+";")
+    
     for i in csv.keys():
-        print("INSERT INTO ",setupTableList[0],"(",csv["0"],") (",csv[i],")")
-   # insertTable=str(setup_dict)
-    
-    #insertValues=csv.strip("[]")
-    
-    
-    #print(csv[0])
-
+        print("INSERT INTO","`"+setupTableList[0]+"` (",csv["0"].replace(";",", "),") VALUES (",csv[i].replace(";",", "),");")
+   
     #Datenbankverbindung
-#connection = mysql.connector.connect(**config) 
-
-#es gibt ein Problem mit unserer mysql version, 
-#wir kommen bis zur datenbank, werden aber am PW abgewiesen, obwohl es in workbench einwandfrei funktioniert    
+#connection = mysql.connector.connect(**config)  
+    
