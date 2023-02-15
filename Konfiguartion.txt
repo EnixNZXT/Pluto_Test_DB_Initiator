@@ -1,5 +1,6 @@
-user=test
+user=root
 password=123aa123--
 host=localhost
-database=pluto
+port=3307
+database=testdatenbank
 referenzdatum=16.02.2023

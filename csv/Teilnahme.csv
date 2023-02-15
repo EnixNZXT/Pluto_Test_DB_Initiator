@@ -1,5 +1,5 @@
 0:`tn_id`;`va_id`;`te_buchungsdatum`;`te_status`;`te_stornodatum`;`te_bemerkung`
-1:'100001';'100031';'2023-02-01';'gebucht';'null';'bemerkung'
-2:'100002';'100032';'2023-02-01';'storniert';'null';'bemerkung'
+1:'100001';'100031';'2023-02-01';'gebucht';NULL;'bemerkung'
+2:'100002';'100032';'2023-02-01';'storniert';NULL;'bemerkung'
 3:'100003';'100033';'2023-02-01';'gebucht';'2023-02-01';'keine bemerkung'
-4:'100004';'100034';'2023-02-01';'gebucht';'null';'keine bemerkung'
+4:'100004';'100034';'2023-02-01';'gebucht';NULL;'keine bemerkung'
