@@ -1,3 +1,4 @@
+tn_id;va_id;te_buchungsdatum;te_status;te_stornodatum;te_bemerkung
 100001;100031;01.02.2023;gebucht;bemerkung
 100002;100032;01.02.2023;storniert;bemerkung
 100003;100033;01.02.2023;gebucht;11.02.2023;keine bemerkung
