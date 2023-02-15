@@ -1,24 +1,36 @@
 import os
+import os.path
 import csv
 import mysql.connector
 from mysql.connector import errorcode
 import sys
 from datetime import datetime
 
-setup=sys.argv[1]
+setup="Setups\\"
+setup+=sys.argv[1]
 date=sys.argv[2]
 
     
-
+#config auslesen
 config_file=open("Konfiguartion.txt","r")
+#zeile für zeile einlesen, am "=" trennen, in dictonary speichern
 config=dict(line.strip().split("=") for line in config_file)
-print(config["user"])
-    #dict(line.strip().split("=") for line in config_file)
-# 1. Datenbankverbindung
-connection = mysql.connector.connect(**config)
-    # 3. Setup-Datei lesen
-# with open(config["setup_file"], "r") as setup_file:
-# setup = dict(line.strip().split("=") for line in setup_file)
+for key in config.keys():
+    print(config[key])
+    
+
+#Datenbankverbindung
+#connection = mysql.connector.connect(**config)
+
+#Setup-Datei lesen
+setup_file=open(setup, "r")
+setup_dict=dict(line.strip().split(":") for line in setup_file)
+for key in setup_dict.keys():
+    csv_file=open(r"csv\\"+setup_dict[key], "r")
+    csv=list(line.strip().split(";") for line in csv_file)
+    print(csv[0])
+
+#print(setup_dict)
 
     # 4. Dateipfade auf Existenz der Datei prüfen
 #csv_file_path = setup["csv_file_path"]
@@ -26,7 +38,5 @@ connection = mysql.connector.connect(**config)
  #   print(f"Error: CSV file not found at path {csv_file_path}")
 
     # 5. CSV-Datei einlesen
-csv_file=open(r"csv\Teilnehmer.csv", "r")
-csv=list(line.strip().split(";") for line in csv_file)
-print(csv)
-print(date)
+
+
