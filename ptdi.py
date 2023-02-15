@@ -8,6 +8,7 @@ from datetime import datetime
 
 setup="Setups\\"
 setup+=sys.argv[1]
+setup+=".txt"
 date=sys.argv[2]
 
     #config auslesen
