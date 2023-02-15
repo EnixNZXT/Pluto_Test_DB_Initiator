@@ -25,15 +25,13 @@ config.popitem()
     #Setup-Datei lesen
 setup_file=open(setup, "r")
 setup_dict=dict(line.strip().split(":") for line in setup_file)
-i=0
 for key in setup_dict.keys():
-    
     csv_file=open(r"csv\\"+setup_dict[key], "r")
     setupTables=str(setup_dict[key]).strip(".csv")
     setupTableList=list(setupTables.split(","))
-    csv=list(line.strip().split(";") for line in csv_file)
-    #####baustelle forschleife
-    print("INSERT INTO ",setupTableList[0], csv[0], csv[i])
+    csv=dict(line.strip().split(":") for line in csv_file)
+    for i in csv.keys():
+        print("INSERT INTO ",setupTableList[0],"(",csv["0"],") (",csv[i],")")
    # insertTable=str(setup_dict)
     
     #insertValues=csv.strip("[]")

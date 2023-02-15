@@ -1,5 +1,5 @@
-tn_id;tn_nachname;tn_vorname;tn_email
-100001;wurst;hans;hans.wurst@gmail.com
-100002;rok;mike;mike.rok@gmx.de
-100003;baumeister;bob;bob.baumeister@t-online.de
-100004;mustermann;robbie;robbie.mustermann@gmail.com
+0:tn_id;tn_nachname;tn_vorname;tn_email
+1:100001;wurst;hans;hans.wurst@gmail.com
+2:100002;rok;mike;mike.rok@gmx.de
+3:100003;baumeister;bob;bob.baumeister@t-online.de
+4:100004;mustermann;robbie;robbie.mustermann@gmail.com

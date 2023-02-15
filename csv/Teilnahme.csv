@@ -1,5 +1,5 @@
-tn_id;va_id;te_buchungsdatum;te_status;te_stornodatum;te_bemerkung
-100001;100031;01.02.2023;gebucht;bemerkung
-100002;100032;01.02.2023;storniert;bemerkung
-100003;100033;01.02.2023;gebucht;11.02.2023;keine bemerkung
-100004;100034;01.02.2023;gebucht;keine bemerkung
+0:tn_id;va_id;te_buchungsdatum;te_status;te_stornodatum;te_bemerkung
+1:100001;100031;01.02.2023;gebucht;bemerkung
+2:100002;100032;01.02.2023;storniert;bemerkung
+3:100003;100033;01.02.2023;gebucht;11.02.2023;keine bemerkung
+4:100004;100034;01.02.2023;gebucht;keine bemerkung
