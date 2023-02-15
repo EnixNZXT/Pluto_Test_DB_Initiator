@@ -1,3 +1,5 @@
-host=localhost
 user=test
 password=123aa123--
+host=localhost
+database=Testdatenbank
+raise_on_warnings=True
