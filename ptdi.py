@@ -30,7 +30,9 @@ for key in setup_dict.keys():
     csv_file=open(r"csv\\"+setup_dict[key], "r")
     csv=list(line.strip().split(";") for line in csv_file)
     print(csv[0])
-    
+
     #Datenbankverbindung
-#connection = mysql.connector.connect(**config) #es gibt ein Problem mit unserer mysql version, 
+connection = mysql.connector.connect(**config) 
+
+#es gibt ein Problem mit unserer mysql version, 
 #wir kommen bis zur datenbank, werden aber am PW abgewiesen, obwohl es in workbench einwandfrei funktioniert    
