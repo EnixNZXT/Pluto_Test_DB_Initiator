@@ -17,9 +17,10 @@ config_file=open("Konfiguartion.txt","r")
     
     #zeile für zeile einlesen, am "=" trennen, in dictonary speichern
 config=dict(line.strip().split("=") for line in config_file)
+SCHEMA=config["database"]
     #das referenzdatum wird aus dem dictonary gelesen, 
     #in eine varibale gepeichert, dann entfernt um den rest des Dictonarys an die connection fkt zu übergeben
-refdate=config["referenzdatum"]
+REFDATE=config["referenzdatum"]
 config.popitem()
     #Datenbankverbindung
 connection = mysql.connector.connect(**config) 
@@ -43,4 +44,7 @@ for key in setup_dict.keys():
         INSERT=f"INSERT INTO {TABLE} ({COLUMN}) VALUES ({VALUES})"
         sql_cursor.execute(INSERT)
         connection.commit() 
-        
+
+        #ALTER=f"UPDATE {TABLE} SET %datum = DATEDIFF('{REFDATE}',%datum) WHERE %datum IS NOT NULL AND = '{SCHEMA}' AND COLUMN_NAME LIKE '%Datum'"
+        #sql_cursor.execute(ALTER)
+        #connection.commit()  

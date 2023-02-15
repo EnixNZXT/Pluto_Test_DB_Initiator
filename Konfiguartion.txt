@@ -3,4 +3,4 @@ password=123aa123--
 host=localhost
 port=3307
 database=testdatenbank
-referenzdatum=16.02.2023
+referenzdatum=2023-02-16
