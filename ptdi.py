@@ -10,33 +10,20 @@ setup="Setups\\"
 setup+=sys.argv[1]
 date=sys.argv[2]
 
-    
-#config auslesen
+    #config auslesen
 config_file=open("Konfiguartion.txt","r")
-#zeile für zeile einlesen, am "=" trennen, in dictonary speichern
+    #zeile für zeile einlesen, am "=" trennen, in dictonary speichern
 config=dict(line.strip().split("=") for line in config_file)
 for key in config.keys():
     print(config[key])
-    
 
-#Datenbankverbindung
+    #Datenbankverbindung
 #connection = mysql.connector.connect(**config)
 
-#Setup-Datei lesen
+    #Setup-Datei lesen
 setup_file=open(setup, "r")
 setup_dict=dict(line.strip().split(":") for line in setup_file)
 for key in setup_dict.keys():
     csv_file=open(r"csv\\"+setup_dict[key], "r")
     csv=list(line.strip().split(";") for line in csv_file)
     print(csv[0])
-
-#print(setup_dict)
-
-    # 4. Dateipfade auf Existenz der Datei prüfen
-#csv_file_path = setup["csv_file_path"]
-#if not os.path.isfile(csv_file_path):
- #   print(f"Error: CSV file not found at path {csv_file_path}")
-
-    # 5. CSV-Datei einlesen
-
-
