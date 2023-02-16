@@ -10,7 +10,7 @@ from datetime import datetime
 setup="Setups\\"
 setup+=sys.argv[1]
 setup+=".txt"
-date=sys.argv[2]
+
     
     #config auslesen
 config_file=open("Konfiguartion.txt","r")
@@ -35,16 +35,21 @@ for key in setup_dict.keys():
     csv=dict(line.strip().split(":") for line in csv_file)
     TABLE=setup_dict[key].strip(".csv")
     TRUNCATE=f"TRUNCATE {TABLE}"
+    #print(TRUNCATE)
     sql_cursor.execute(TRUNCATE)
     connection.commit()
-    
     for i in csv.keys():
         COLUMN=csv["0"].replace(";",", ")
+        if csv[i]==csv["0"]:
+            continue
         VALUES=csv[i].replace(";",", ")
         INSERT=f"INSERT INTO {TABLE} ({COLUMN}) VALUES ({VALUES})"
+        print(INSERT)
         sql_cursor.execute(INSERT)
         connection.commit() 
-
-        #ALTER=f"UPDATE {TABLE} SET %datum = DATEDIFF('{REFDATE}',%datum) WHERE %datum IS NOT NULL AND = '{SCHEMA}' AND COLUMN_NAME LIKE '%Datum'"
-        #sql_cursor.execute(ALTER)
+        datum_cols=COLUMN.split(",")
+        #print(datum_cols)
+        #ALTER=f"UPDATE {TABLE} SET {COLUMN} = DATEDIFF('{REFDATE}',%datum) WHERE {COLUMN} IS NOT NULL AND = '{SCHEMA}' AND {COLUMN} LIKE '%datum'"
+        #print(COLUMN.split(","))
+        
         #connection.commit()  
