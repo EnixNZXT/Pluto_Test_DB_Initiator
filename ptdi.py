@@ -46,7 +46,7 @@ for key in setup_dict.keys():
         VALUES=csv[i].replace(";",", ")
         #zusammengesetzer INSERT mit allen SQL erzeugnissen
         INSERT=f"INSERT INTO {TABLE} ({COLUMN}) VALUES ({VALUES})"
-        #print(INSERT)
+        print(INSERT)
         #INSERT anwenden, Daten in DB eintragen
         sql_cursor.execute(INSERT)
         connection.commit() 
